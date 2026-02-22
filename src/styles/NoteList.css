@@ -1,0 +1,152 @@
+.note-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.note-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px 12px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.note-list__app-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
+}
+
+.note-list__new-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.note-list__new-btn:hover {
+  background: var(--color-accent-dark);
+}
+
+.note-list__new-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.note-list__empty {
+  padding: 24px 16px;
+  color: var(--color-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.note-list__list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 6px 0;
+}
+
+/* NoteListItem */
+.note-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  margin: 2px 6px;
+  transition: background 0.1s;
+  outline: none;
+}
+
+.note-list-item:hover {
+  background: var(--color-surface-hover);
+}
+
+.note-list-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+}
+
+.note-list-item--selected {
+  background: var(--color-surface-hover);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 9px;
+}
+
+.note-list-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.note-list-item__title {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list-item__preview {
+  font-size: 12px;
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list-item__date {
+  font-size: 11px;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+.note-list-item__delete {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.1s, color 0.1s, background 0.1s;
+  margin-top: 1px;
+}
+
+.note-list-item:hover .note-list-item__delete,
+.note-list-item--selected .note-list-item__delete {
+  opacity: 1;
+}
+
+.note-list-item__delete:hover {
+  color: var(--color-danger);
+  background: #fee2e2;
+}
+
+.note-list-item__delete:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--color-danger);
+  outline-offset: 1px;
+}
