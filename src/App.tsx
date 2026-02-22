@@ -51,15 +51,17 @@ export function App() {
         onDelete={handleDeleteRequest}
         onNewNote={createNote}
       />
-      {selectedNote ? (
-        <NoteEditor
-          note={selectedNote}
-          onUpdate={updateNote}
-          onDelete={handleDeleteRequest}
-        />
-      ) : (
-        <EmptyState onNewNote={createNote} />
-      )}
+      <div className="app__main">
+        {selectedNote ? (
+          <NoteEditor
+            note={selectedNote}
+            onUpdate={updateNote}
+            onDelete={handleDeleteRequest}
+          />
+        ) : (
+          <EmptyState onNewNote={createNote} />
+        )}
+      </div>
       {pendingDeleteId && pendingNote && (
         <DeleteDialog
           noteTitle={pendingNote.title}

@@ -1,6 +1,10 @@
 .note-list {
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   overflow: hidden;
@@ -57,6 +61,7 @@
   list-style: none;
   overflow-y: auto;
   flex: 1;
+  min-height: 0;
   padding: 6px 0;
 }
 
